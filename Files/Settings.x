@@ -42,6 +42,7 @@ extern YMSettingsItem *YMTextSegment(NSString *title, NSString *key, NSArray<NSS
 extern YMSettingsItem *YMImageSegment(NSString *title, NSString *key, NSArray<UIImage *> *images, NSInteger defaultValue);
 extern void YMPushTabOrder(id settingsVC, id parentResponder);
 extern void YMPushOverlayButtonOrder(id settingsVC, id parentResponder);
+extern void YMPushBlockedChannels(id settingsVC, id parentResponder);
 extern void YMRegisterSettingsGroup(NSString *title, NSArray<YMSettingsItem *> *items);
 extern void YMPushSettingsSearch(id settingsVC, id parentResponder);
 
@@ -263,6 +264,11 @@ static NSString *GetCacheSize() { // YTLite - @dayanch96
             YMToggle(YMLOC(@"HIDE_SHORTS_SHELF"), YMLOC(@"HIDE_SHORTS_SHELF_DESC"), HideShortsShelf),
             YMToggle(YMLOC(@"KEEP_SHORTS_SUBSCRIPT"), YMLOC(@"KEEP_SHORTS_SUBSCRIPT_DESC"), KeepShortsSubscript),
             YMToggle(YMLOC(@"HIDE_SEARCH_HISTORY"), YMLOC(@"HIDE_SEARCH_HISTORY_DESC"), HideSearchHis),
+            YMToggle(YMLOC(@"BLOCK_CHANNELS_IN_SEARCH"), YMLOC(@"BLOCK_CHANNELS_IN_SEARCH_DESC"), BlockChannelsInSearch),
+            YMAction(YMLOC(@"BLOCKED_CHANNELS"), YMLOC(@"BLOCKED_CHANNELS_DESC"), ^(UIViewController *vc) {
+                (void)vc;
+                YMPushBlockedChannels(settingsViewController, [self parentResponder]);
+            }),
             YMToggle(YMLOC(@"REMOVE_CHANNEL_COMMUNITY_BUTTON"), YMLOC(@"REMOVE_CHANNEL_COMMUNITY_BUTTON_DESC"), RemoveChannelCommunityButton),
             YMToggle(YMLOC(@"REMOVE_CHANNEL_SPONSOR_BUTTON"), YMLOC(@"REMOVE_CHANNEL_SPONSOR_BUTTON_DESC"), RemoveChannelSponsorAll),
     ];

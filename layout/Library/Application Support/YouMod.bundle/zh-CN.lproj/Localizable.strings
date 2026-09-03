@@ -576,3 +576,17 @@
 "SB_SKIP_ALERT_DURATION" = "跳过提示时长";
 "SB_UNSKIP_ALERT_DURATION" = "取消跳过提示时长";
 "SB_MIN_DURATION_SLIDER" = "可跳过片段的最小时长";
+
+// Block channels in search
+"BLOCK_CHANNELS_IN_SEARCH" = "Block channels in search";
+"BLOCK_CHANNELS_IN_SEARCH_DESC" = "Hide search results from the channels in your blocked list.";
+"BLOCKED_CHANNELS" = "Blocked channels";
+"BLOCKED_CHANNELS_DESC" = "Manage the channels hidden from search results.";
+"BLOCKED_CHANNELS_EMPTY" = "No channels blocked yet";
+"BLOCKED_CHANNELS_ADD" = "Add channel";
+"BLOCKED_CHANNELS_ADD_DESC" = "Enter an @handle, channel ID, or channel name. Handles and IDs match exactly; a name also matches any result whose text contains it.";
+"BLOCKED_CHANNELS_PLACEHOLDER" = "@handle, channel ID, or name";
+"BLOCKED_CHANNELS_TAP_TO_REMOVE" = "Tap to remove";
+"BLOCKED_CHANNELS_REMOVE_DESC" = "Remove this channel from the blocked list?";
+"ADD" = "Add";
+"REMOVE" = "Remove";
