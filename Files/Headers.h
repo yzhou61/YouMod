@@ -132,6 +132,8 @@
 #define HideShortsShelf @"YouModHideShortsShelf"
 #define KeepShortsSubscript @"YouModKeepShortsSubscript"
 #define HideSearchHis @"YouModHideSearchHistoryAndSuggestions"
+#define BlockChannelsInSearch @"YouModBlockChannelsInSearch"
+#define BlockedChannels @"YouModBlockedChannels"
 #define HideSurveys @"YouModHideSurveys"
 #define HideRelatedVideos @"YouModHideRelatedVideos"
 #define RemoveChannelCommunityButton @"YouModRemoveChannelCommunityButton"
