@@ -205,6 +205,15 @@ static void YMStartFetch(NSString *videoID) {
                 if ([json isKindOfClass:[NSDictionary class]]) {
                     NSNumber *likes = YMNumber(json[@"likes"]);
                     NSNumber *dislikes = YMNumber(json[@"dislikes"]);
+                    // The API returns likes: 0 for most videos while dislikes stays populated.
+                    // The raw pair counts extension users only, but its ratio is consistent;
+                    // never mix rawLikes with the extrapolated dislikes.
+                    NSNumber *rawLikes = YMNumber(json[@"rawLikes"]);
+                    NSNumber *rawDislikes = YMNumber(json[@"rawDislikes"]);
+                    if ([likes doubleValue] == 0 && [rawLikes doubleValue] > 0 && rawDislikes) {
+                        likes = rawLikes;
+                        dislikes = rawDislikes;
+                    }
                     if (likes && dislikes) {
                         parsed = @{ @"l": likes, @"d": dislikes,
                                     @"t": @([NSDate timeIntervalSinceReferenceDate]) };
